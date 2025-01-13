@@ -57,7 +57,7 @@
     <div class="box hid" id="h">h</div>
     <div class="box hid" id="i">i</div>
     </div>
-    <button onclick="location.reload()">Refresh Page</button>
+    <button onclick="location.reload()"> Restart </button>
 
 </body>
 <script>
@@ -76,6 +76,9 @@
     let i=document.querySelector('#i');
 
     document.addEventListener('click',function(event){
+        if(wincount==1){
+            return;
+        }
         initialdiv = event.target;
         initialdiv.style.color="white";
         if(initialdiv.innerText!='X' && initialdiv.innerText!='O'){
@@ -106,6 +109,7 @@
             win.style.color="green";
             win.style.fontSize="20pt";
             document.body.appendChild(win);
+
         }
 
         
